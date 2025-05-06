@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "schedule:nonOfficeHours"],
+  "timezone": "America/Vancouver",
+  "labels": ["dependencies", "automerge"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "major": {
+    "automerge": true
+  },
+  "minor": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  },
+  "pin": {
+    "automerge": true
+  },
+  "automergeType": "branch"
+}
