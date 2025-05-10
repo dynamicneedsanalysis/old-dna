@@ -26,6 +26,8 @@ export async function POST(req: Request) {
 
     const session = event.data.object as Stripe.Checkout.Session;
 
+    console.log("MADE IT HERE");
+
     switch (event.type) {
       // On checkout completion, get the subscription and insert it into the database.
       case "checkout.session.completed": {
@@ -37,6 +39,8 @@ export async function POST(req: Request) {
         if (!session?.metadata?.userId) {
           return new NextResponse("User id is required", { status: 400 });
         }
+
+        console.log("CREATE USER SUBSCRIPTION");
 
         // Create User subscription
         await insertSubscription({
@@ -63,6 +67,7 @@ export async function POST(req: Request) {
     }
     return new NextResponse(null, { status: 200 });
   } catch (error) {
+    console.log("WEB HOOK ERROR", error);
     if (error instanceof Error) {
       return new NextResponse(`Webhook Error ${error.message}`, {
         status: 400,
