@@ -53,12 +53,12 @@ export async function GET(req: NextRequest) {
         mode: "subscription",
         billing_address_collection: "required",
         payment_method_collection: "if_required",
-        // allow_promotion_codes: true,
+        allow_promotion_codes: true,
         line_items: createLineItems(plan),
         metadata: {
           userId: user.id,
         },
-        discounts: [{ promotion_code: "promo_1RNTpLDFg9lp4zTLdf4cjReT" }],
+        // discounts: [{ promotion_code: "promo_1RNTpLDFg9lp4zTLdf4cjReT" }],
         subscription_data: {
           trial_settings: {
             end_behavior: {
