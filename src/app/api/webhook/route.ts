@@ -58,6 +58,8 @@ export async function POST(req: Request) {
           session.subscription as string
         );
 
+        console.log("INVOICE SUCCEED");
+
         // Update User subscription
         await updateSubscription(subscription.id, {
           stripePriceId: subscription.items.data[0].price.id,

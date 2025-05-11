@@ -30,6 +30,8 @@ export async function selectSubscription({
 // Inserts a new Subscription with the given Insert Subscription data.
 // Returns: The nullable error result.
 export async function insertSubscription(subscription: InsertSubscription) {
+  console.log("INSERTING THIS", subscription);
+
   const { error } = await mightFail(
     async () =>
       await db.insert(subscriptions).values({
@@ -39,6 +41,9 @@ export async function insertSubscription(subscription: InsertSubscription) {
         stripePriceId: subscription.stripePriceId,
       })
   );
+
+  console.log("DID WE PASS", error);
+
   return { error };
 }
 

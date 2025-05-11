@@ -41,6 +41,7 @@ export default async function General({
   }
 
   const isSubscribed = await checkSubscription();
+  console.log("MOUNTED ON THE WEB APP", isSubscribed);
   return (
     <div className="grid gap-6">
       {!edit ? (
@@ -78,7 +79,7 @@ export default async function General({
           <CardDescription>
             {isSubscribed
               ? "You are currently on a pro plan."
-              : "Please subscribe to get access to all features."}
+              : "Please subscribe to get access to all features. Click the button below"}
           </CardDescription>
         </CardHeader>
         <CardContent>

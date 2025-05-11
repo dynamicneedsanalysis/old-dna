@@ -33,6 +33,11 @@ export async function mightFail<T>(fn: () => Promise<T>) {
 
 // Adds prefix to path depending on project environment.
 export function absoluteUrl(path: string): string {
+  console.log(
+    "URL FOR PROJECT PRODUCTION",
+    process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+  );
+
   if (process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}${path}` as const;
   }
