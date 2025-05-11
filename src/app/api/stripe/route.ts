@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
         metadata: {
           userId: user.id,
         },
-        discounts: [{ promotion_code: "promo_1RNTWaDFg9lp4zTL5xlzsap7" }],
+        discounts: [{ promotion_code: "promo_1RNTpLDFg9lp4zTLdf4cjReT" }],
         subscription_data: {
           trial_settings: {
             end_behavior: {
