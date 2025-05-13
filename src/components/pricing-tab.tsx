@@ -37,7 +37,7 @@ function ProPlanCard({ value }: { value: "monthly" | "annually" }) {
         {value === "monthly" && (
           <>
             <p className="my-4 flex items-end justify-center gap-4">
-              <span className="text-4xl font-bold">$99.99</span>
+              <span className="text-4xl font-bold">$100</span>
               <span className="text-sm">/ month</span>
             </p>
           </>
